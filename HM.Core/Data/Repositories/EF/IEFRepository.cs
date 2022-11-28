@@ -16,10 +16,10 @@ public interface IEFRepository<TEntity>
     Task<List<TEntity>> GetAllListAsync();
     IQueryable<TEntity> GetAllAsNoTracking();
 
-    TEntity Insert(TEntity entity);
-    int InsertAndGetId(TEntity entity);
-    Task<TEntity> InsertAsync(TEntity entity);
-    Task<int> InsertAndGetIdAsync(TEntity entity);
+    TEntity Add(TEntity entity);
+    int AddAndGetId(TEntity entity);
+    Task<TEntity> AddAsync(TEntity entity);
+    Task<int> AddAndGetIdAsync(TEntity entity);
     List<TEntity> AddRange(List<TEntity> entity);
     Task<List<TEntity>> AddRangeAsync(List<TEntity> entity);
 

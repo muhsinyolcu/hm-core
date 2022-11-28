@@ -76,7 +76,7 @@ public class EFRepository<TEntity> : IEFRepository<TEntity>
     #endregion
 
     #region Insert/Add Section
-    public TEntity Insert(TEntity entity)
+    public TEntity Add(TEntity entity)
     {
         _dbSet.Add(entity);
         _context.SaveChanges();
@@ -84,7 +84,7 @@ public class EFRepository<TEntity> : IEFRepository<TEntity>
         return entity;
     }
 
-    public int InsertAndGetId(TEntity entity)
+    public int AddAndGetId(TEntity entity)
     {
         _dbSet.Add(entity);
         _context.SaveChanges();
@@ -92,7 +92,7 @@ public class EFRepository<TEntity> : IEFRepository<TEntity>
         return entity.Id;
     }
 
-    public async Task<int> InsertAndGetIdAsync(TEntity entity)
+    public async Task<int> AddAndGetIdAsync(TEntity entity)
     {
         _dbSet.Add(entity);
         await _context.SaveChangesAsync();
@@ -100,7 +100,7 @@ public class EFRepository<TEntity> : IEFRepository<TEntity>
         return entity.Id;
     }
 
-    public async Task<TEntity> InsertAsync(TEntity entity)
+    public async Task<TEntity> AddAsync(TEntity entity)
     {
         _dbSet.Add(entity);
         await _context.SaveChangesAsync();
